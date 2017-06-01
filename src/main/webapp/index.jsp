@@ -25,18 +25,6 @@ body {
         </form>
      </div>
  
-    <%
-       if( request.getAttribute("departamentos")!=null){
-          List<Departamento> departamentos  = (List<Departamento>)request.getAttribute("departamentos");
-           for (Departamento departamento : departamentos) {
-         %>      
-         <h1> <%=departamento.getNom_departamento()%> </h1><br/> 
-         <%      
-          }
-       }
-      
-    
-    %>
     <img src="ChartServlet" />
 </body>
 </html>
