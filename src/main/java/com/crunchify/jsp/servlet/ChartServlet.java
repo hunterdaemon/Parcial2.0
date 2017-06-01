@@ -143,7 +143,7 @@ public class ChartServlet extends HttpServlet {
 //                while(claves.hasMoreElements()){
 //                    dataset.setValue((String)claves.nextElement(),c.get((String)claves.nextElement()));
 //                }
-            for (int i = 0; i < c.size(); i=i+2) {
+            for (int i = 0; i < c.size(); i++) {
                 dataset.setValue(String.valueOf(c.get(i).getId_colmena()),c.get(i).getPanalesconaimento());
             }
             
