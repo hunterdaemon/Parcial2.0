@@ -55,15 +55,15 @@ public class ChartServlet extends HttpServlet {
 //            Logger.getLogger(ChartServlet.class.getName()).log(Level.SEVERE, null, ex);
 //        }
 //
-//        	response.setContentType("image/png");
-//		OutputStream outputStream = response.getOutputStream();
-//		JFreeChart chart = null;
-//           
-//                chart = getChart();
-//            
-//		int width = 500;
-//		int height = 350;
-//		ChartUtilities.writeChartAsPNG(outputStream, chart, width, height);
+        	response.setContentType("image/png");
+		OutputStream outputStream = response.getOutputStream();
+		JFreeChart chart = null;
+           
+                chart = getChart();
+            
+		int width = 500;
+		int height = 350;
+		ChartUtilities.writeChartAsPNG(outputStream, chart, width, height);
 
 	}
         
@@ -139,11 +139,11 @@ public class ChartServlet extends HttpServlet {
                 LinkedList <Visitas_Tecnicas>c=(LinkedList) dep.findAll();
                
             
-
+                dataset.setValue("verga",123);
                 
-            for (int i = 0; i < c.size(); i++) {
-                dataset.setValue(c.get(i).getTecnico(),c.get(i).getPanalesconaimento());
-            }
+//            for (int i = 0; i < c.size(); i++) {
+//                dataset.setValue(c.get(i).getTecnico(),c.get(i).getPanalesconaimento());
+//            }
             
 		boolean legend = true;
 		boolean tooltips = false;
