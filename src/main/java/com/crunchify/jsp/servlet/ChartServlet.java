@@ -57,7 +57,7 @@ public class ChartServlet extends HttpServlet {
 //
         	response.setContentType("image/png");
 		OutputStream outputStream = response.getOutputStream();
-		JFreeChart chart = null;
+		JFreeChart chart = getChart();
            
                 chart = getChart();
             
