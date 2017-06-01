@@ -28,7 +28,7 @@ body {
     <%
        if( request.getAttribute("Visitas")!=null){
           List<Visitas_Tecnicas> visitas  = (List<Visitas_Tecnicas>)request.getAttribute("Visitas");
-           for (Departamento departamento : departamentos) {
+           for (Departamento visitas : visita) {
          %>      
          <h1> <%=visitas.getId_visita()%> </h1><br/> 
          <%      
