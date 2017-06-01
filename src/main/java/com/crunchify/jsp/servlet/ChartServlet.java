@@ -44,7 +44,7 @@ public class ChartServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-            
+//            try{
 //            response.setContentType("image/png");
 //            OutputStream outputStream = response.getOutputStream();
 //            JFreeChart chart = getChart();
@@ -54,16 +54,16 @@ public class ChartServlet extends HttpServlet {
 //        } catch (URISyntaxException ex) {
 //            Logger.getLogger(ChartServlet.class.getName()).log(Level.SEVERE, null, ex);
 //        }
-
-        	response.setContentType("image/png");
-		OutputStream outputStream = response.getOutputStream();
-		JFreeChart chart = null;
-           
-                chart = getChart();
-            
-		int width = 500;
-		int height = 350;
-		ChartUtilities.writeChartAsPNG(outputStream, chart, width, height);
+//
+//        	response.setContentType("image/png");
+//		OutputStream outputStream = response.getOutputStream();
+//		JFreeChart chart = null;
+//           
+//                chart = getChart();
+//            
+//		int width = 500;
+//		int height = 350;
+//		ChartUtilities.writeChartAsPNG(outputStream, chart, width, height);
 
 	}
         
@@ -142,7 +142,7 @@ public class ChartServlet extends HttpServlet {
 
                 
             for (int i = 0; i < c.size(); i++) {
-                dataset.setValue(c.get(i).getFecha(),c.get(i).getPanalesconaimento());
+                dataset.setValue(c.get(i).getTecnico(),c.get(i).getPanalesconaimento());
             }
             
 		boolean legend = true;

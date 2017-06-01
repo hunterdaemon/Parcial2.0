@@ -29,7 +29,7 @@ body {
           List<Visitas_Tecnicas> vi  = (List<Visitas_Tecnicas>)request.getAttribute("Visitas");
            for (Visitas_Tecnicas departamento : vi) {
          %>      
-         <h1> <%=departamento.getId_visita()%> </h1><br/> 
+         <h1> <%=departamento.getPanalesconaimento()%> </h1><br/> 
          <%      
           }
        }
