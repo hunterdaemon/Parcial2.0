@@ -144,14 +144,14 @@ public class ChartServlet extends HttpServlet {
 //                    dataset.setValue((String)claves.nextElement(),c.get((String)claves.nextElement()));
 //                }
             for (int i = 0; i < c.size(); i++) {
-                dataset.setValue(String.valueOf(c.get(i).getId_colmena()),c.get(i).getPanalesconaimento());
+                dataset.setValue(c.get(i).getFecha(),c.get(i).getPanalesconaimento());
             }
             
 		boolean legend = true;
 		boolean tooltips = false;
 		boolean urls = false;
 
-		JFreeChart chart = ChartFactory.createPieChart("Grafica1", dataset, legend, tooltips, urls);
+		JFreeChart chart = ChartFactory.createPieChart("Informacion Panal Colmena", dataset, legend, tooltips, urls);
 
 		chart.setBorderPaint(Color.GREEN);
 		chart.setBorderStroke(new BasicStroke(5.0f));
