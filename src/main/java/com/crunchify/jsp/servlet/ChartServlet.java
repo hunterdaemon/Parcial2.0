@@ -55,107 +55,113 @@ public class ChartServlet extends HttpServlet {
 //            Logger.getLogger(ChartServlet.class.getName()).log(Level.SEVERE, null, ex);
 //        }
 //
+            try {
         	response.setContentType("image/png");
 		OutputStream outputStream = response.getOutputStream();
 		JFreeChart chart = getChart();
            
-                chart = getChart();
             
-		int width = 500;
+                chart = getChart();
+                int width = 500;
 		int height = 350;
 		ChartUtilities.writeChartAsPNG(outputStream, chart, width, height);
-
-	}
-        
-        
-//    public JFreeChart getChart() throws URISyntaxException {
-//
-//        List<Visitas_Tecnicas> arr = new LinkedList();
-//       Visitas_tecnicasDao DepartamentoDAO = new Visitas_tecnicasDao();
-//        arr =   DepartamentoDAO.findAll();
-//        double[][] data = new double[1][arr.size()];
-//        int j=0;
-//        for (int i = 0; i < arr.size(); i++) {
-//            data[0][j] = arr.get(i).getId_departamento() ;
-//            j++;
-//        }
-//
-//        CategoryDataset category = DatasetUtilities.createCategoryDataset(
-//                "Series",       
-//                "lol",
-//                data
-//        );
-//
-//        JFreeChart chart = ChartFactory.createBarChart(
-//                "Grafico", // chart title
-//                "Area", // domain axis label
-//                "Elementos", // range axis label
-//                category, // data
-//                PlotOrientation.VERTICAL, // the plot orientation
-//                false, // include legend
-//                true,
-//                false
-//        );
-//
-//        chart.setBackgroundPaint(Color.lightGray);
-//
-//        // get a reference to the plot for further customisation...
-//        CategoryPlot plot = chart.getCategoryPlot();
-//        plot.setNoDataMessage("NO DATA!");
-//
-//        CategoryItemRenderer renderer = new CustomRenderer(
-//                new Paint[]{Color.red, Color.blue, Color.green,
-//                    Color.yellow, Color.WHITE, Color.cyan,
-//                    Color.magenta, Color.blue}
-//        );
-//
-//        renderer.setItemLabelsVisible(true);
-//        ItemLabelPosition p = new ItemLabelPosition(
-//                ItemLabelAnchor.CENTER, TextAnchor.CENTER, TextAnchor.CENTER, 45.0
-//        );
-//        renderer.setPositiveItemLabelPosition(p);
-//        plot.setRenderer(renderer);
-//
-//        // change the margin at the top of the range axis...
-//       org.jfree.chart.axis.ValueAxis rangAxis = plot.getRangeAxis();
-//        rangAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
-//        rangAxis.setLowerMargin(0.15);
-//        rangAxis.setUpperMargin(0.15);
-//
-//        return chart;
-//
-//    }
-        
-        
-        
-        
-
-	public JFreeChart getChart() {
+            } catch (URISyntaxException ex) {
+                Logger.getLogger(ChartServlet.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
 		
-                DefaultPieDataset dataset = new DefaultPieDataset();
-	        //Crear la capa de servicios que se enlace con el DAO
-                
-                Visitas_tecnicasDao dep=new Visitas_tecnicasDao();
-                LinkedList <Visitas_Tecnicas>c=(LinkedList) dep.findAll();
-               
-            
-                dataset.setValue("verga",123);
-                
-//            for (int i = 0; i < c.size(); i++) {
-//                dataset.setValue(c.get(i).getTecnico(),c.get(i).getPanalesconaimento());
-//            }
-            
-		boolean legend = true;
-		boolean tooltips = false;
-		boolean urls = false;
 
-		JFreeChart chart = ChartFactory.createPieChart("Informacion Panal Colmena", dataset, legend, tooltips, urls);
-
-		chart.setBorderPaint(Color.GREEN);
-		chart.setBorderStroke(new BasicStroke(5.0f));
-		chart.setBorderVisible(true);
-
-		return chart;
 	}
+        
+        
+    public JFreeChart getChart() throws URISyntaxException {
+
+        List<Visitas_Tecnicas> arr = new LinkedList();
+       Visitas_tecnicasDao vis = new Visitas_tecnicasDao();
+        arr =   vis.findAll();
+        double[][] data = new double[1][arr.size()];
+        int j=0;
+        for (int i = 0; i < arr.size(); i++) {
+            data[0][j] = arr.get(i).getId_visita() ;
+            j++;
+        }
+
+        CategoryDataset category = DatasetUtilities.createCategoryDataset(
+                "Series",       
+                "Series",
+                data
+        );
+
+        JFreeChart chart = ChartFactory.createBarChart(
+                "Grafico", // chart title
+                "Area", // domain axis label
+                "Elementos", // range axis label
+                category, // data
+                PlotOrientation.VERTICAL, // the plot orientation
+                false, // include legend
+                true,
+                false
+        );
+
+        chart.setBackgroundPaint(Color.lightGray);
+
+        // get a reference to the plot for further customisation...
+        CategoryPlot plot = chart.getCategoryPlot();
+        plot.setNoDataMessage("NO DATA!");
+
+        CategoryItemRenderer renderer = new CustomRenderer(
+                new Paint[]{Color.red, Color.blue, Color.green,
+                    Color.yellow, Color.WHITE, Color.cyan,
+                    Color.magenta, Color.blue}
+        );
+
+        renderer.setItemLabelsVisible(true);
+        ItemLabelPosition p = new ItemLabelPosition(
+                ItemLabelAnchor.CENTER, TextAnchor.CENTER, TextAnchor.CENTER, 45.0
+        );
+        renderer.setPositiveItemLabelPosition(p);
+        plot.setRenderer(renderer);
+
+        // change the margin at the top of the range axis...
+       org.jfree.chart.axis.ValueAxis rangAxis = plot.getRangeAxis();
+        rangAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
+        rangAxis.setLowerMargin(0.15);
+        rangAxis.setUpperMargin(0.15);
+
+        return chart;
+
+    }
+        
+        
+        
+        
+
+//	public JFreeChart getChart() {
+//		
+//                DefaultPieDataset dataset = new DefaultPieDataset();
+//	        //Crear la capa de servicios que se enlace con el DAO
+//                
+//                Visitas_tecnicasDao dep=new Visitas_tecnicasDao();
+//                LinkedList <Visitas_Tecnicas>c=(LinkedList) dep.findAll();
+//               
+//            
+//                dataset.setValue("verga",123);
+//                
+////            for (int i = 0; i < c.size(); i++) {
+////                dataset.setValue(c.get(i).getTecnico(),c.get(i).getPanalesconaimento());
+////            }
+//            
+//		boolean legend = true;
+//		boolean tooltips = false;
+//		boolean urls = false;
+//
+//		JFreeChart chart = ChartFactory.createPieChart("Informacion Panal Colmena", dataset, legend, tooltips, urls);
+//
+//		chart.setBorderPaint(Color.GREEN);
+//		chart.setBorderStroke(new BasicStroke(5.0f));
+//		chart.setBorderVisible(true);
+//
+//		return chart;
+//	}
 
 }
