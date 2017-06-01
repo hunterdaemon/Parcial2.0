@@ -18,9 +18,25 @@ body {
 </head>
 <body>
     <div align="center" style="margin-top: 50px;">
-        
+        <form action="CrunchifyServlet">
+           Id Depto:  <input type="text" name="id" size="20px"> <br>
+           Nombre Depto:  <input type="text" name="nombre" size="20px"> <br><br>
+        <input type="submit" value="submit">
+        </form>
      </div>
  
+    <%
+       if( request.getAttribute("Visitas")!=null){
+          List<Visitas_Tecnicas> visitas  = (List<Visitas_Tecnicas>)request.getAttribute("Visitas");
+           for (Departamento departamento : departamentos) {
+         %>      
+         <h1> <%=visitas.getId_visita()%> </h1><br/> 
+         <%      
+          }
+       }
+      
+    
+    %>
     <img src="ChartServlet" />
 </body>
 </html>
