@@ -18,24 +18,7 @@ body {
 </head>
 <body>
     <div align="center" style="margin-top: 50px;">
-        <form action="CrunchifyServlet">
-           Id Depto:  <input type="text" name="id" size="20px"> <br>
-           Nombre Depto:  <input type="text" name="nombre" size="20px"> <br><br>
-        <input type="submit" value="submit">
-        </form>
-     </div>
-    <%
-       if( request.getAttribute("Visitas")!=null){
-          List<Visitas_Tecnicas> vi  = (List<Visitas_Tecnicas>)request.getAttribute("Visitas");
-           for (Visitas_Tecnicas departamento : vi) {
-         %>      
-         <h1> <%=departamento.getPanalesconaimento()%> </h1><br/> 
-         <%      
-          }
-       }
-      
-    
-    %>
-    <img src="ChartServlet" />
+     
+    <img src="ChartServlet"  align="center"/>
 </body>
 </html>
