@@ -137,12 +137,10 @@ public class ChartServlet extends HttpServlet {
                 
                 Visitas_tecnicasDao dep=new Visitas_tecnicasDao();
                 LinkedList <Visitas_Tecnicas>c=(LinkedList) dep.findAll();
-//                
+               
             
-//                Enumeration claves = c.keys();  
-//                while(claves.hasMoreElements()){
-//                    dataset.setValue((String)claves.nextElement(),c.get((String)claves.nextElement()));
-//                }
+
+                
             for (int i = 0; i < c.size(); i++) {
                 dataset.setValue(c.get(i).getFecha(),c.get(i).getPanalesconaimento());
             }
