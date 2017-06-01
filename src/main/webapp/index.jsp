@@ -24,13 +24,12 @@ body {
         <input type="submit" value="submit">
         </form>
      </div>
- 
     <%
        if( request.getAttribute("Visitas")!=null){
-          List<Visitas_Tecnicas> visitas  = (List<Visitas_Tecnicas>)request.getAttribute("Visitas");
-           for (Visitas_Tecnicas visitas : visitas) {
+          List<Visitas_Tecnicas> vi  = (List<Visitas_Tecnicas>)request.getAttribute("Visitas");
+           for (Visitas_Tecnicas departamento : vi) {
          %>      
-         <h1> <%=visitas.getId_visita()%> </h1><br/> 
+         <h1> <%=departamento.getId_visita()%> </h1><br/> 
          <%      
           }
        }
