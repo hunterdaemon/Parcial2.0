@@ -115,6 +115,62 @@ public class Visitas_tecnicasDao  {
 	    return Visitas;
 	}
 
+	public List<Recoleccion> findAll2() {
+		List<Recoleccion> Recoleccion= null;
+	    String query = "SELECT * FROM recoleccion";
+	    Connection connection = null;
+            try {
+                connection = Conexion.getConnection();
+            } catch (URISyntaxException ex) {
+                Logger.getLogger(Visitas_tecnicasDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+	    try {
+	    Statement st = connection.createStatement();
+	    ResultSet rs = st.executeQuery(query);
+	    
+	    String fecha = null;
+            String recolector=null;
+            int id_colmena=0;
+            int kilosdeiel=0;
+            boolean aprobacion;
+            
+	    while (rs.next()){
+	    	if(Recoleccion == null){
+	    		Recoleccion= new ArrayList<Recoleccion>();
+	    	}
+	      
+	        Recoleccion registro= new Recoleccion();
+                
+	        fecha = rs.getString("fecha");
+	        registro.setFecha(fecha);
+	        
+	        recolector = rs.getString("recolector");
+	        registro.setRecolector(recolector); 
+                
+	        
+                id_colmena=rs.getInt("id_colmena");
+                registro.setId_colmena(id_colmena);
+                
+                kilosdeiel=rs.getInt("kilosdeiel");
+                registro.setKilosdeiel(kilosdeiel);
+               
+                
+                aprobacion=rs.getBoolean("aprobacion");
+                registro.setAprobacion(aprobacion);
+                
+                
+	        Recoleccion.add(registro);
+	    }
+	    st.close();
+	    
+	    } catch (SQLException e) {
+			System.out.println("Problemas al obtener la lista de Visitas tecnicas");
+			e.printStackTrace();
+		}
+	    
+	    return Recoleccion;
+	}
+
 	
 	/**
 	 * Funcion que permite realizar la insercion de un nuevo registro en la tabla Visitas_Tecnicas

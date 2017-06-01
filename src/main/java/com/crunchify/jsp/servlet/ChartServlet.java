@@ -76,24 +76,24 @@ public class ChartServlet extends HttpServlet {
         
     public JFreeChart getChart() throws URISyntaxException {
 
-        List<Visitas_Tecnicas> arr = new LinkedList();
+        List<Recoleccion> arr = new LinkedList();
        Visitas_tecnicasDao vis = new Visitas_tecnicasDao();
-        arr =   vis.findAll();
+        arr =   vis.findAll2();
         double[][] data = new double[1][arr.size()];
         int j=0;
         for (int i = 0; i < arr.size(); i++) {
-            data[0][j] = arr.get(i).getId_visita() ;
+            data[0][j] = arr.get(i).getKilosdeiel() ;
             j++;
         }
 
         CategoryDataset category = DatasetUtilities.createCategoryDataset(
                 "Series",       
-                "Series",
+                "Colmena",
                 data
         );
 
         JFreeChart chart = ChartFactory.createBarChart(
-                "Grafico", // chart title
+                "Kilos de miel por Colmena", // chart title
                 "Area", // domain axis label
                 "Elementos", // range axis label
                 category, // data

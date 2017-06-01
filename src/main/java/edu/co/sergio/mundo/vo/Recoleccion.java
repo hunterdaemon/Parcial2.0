@@ -11,39 +11,53 @@ package edu.co.sergio.mundo.vo;
  */
 public class Recoleccion {
     
-    private String nombreDepto;
-    private String tipodecontrato;
-    private int total;
+String fecha ;
+String recolector; 
+int id_colmena ;
+int kilosdeiel ;
+boolean aprobacion ;
 
-    public Recoleccion(String nombreDepto, String tipodecontrato, int total) {
-        this.nombreDepto = nombreDepto;
-        this.tipodecontrato = tipodecontrato;
-        this.total = total;
+    public String getFecha() {
+        return fecha;
     }
 
-    public String getNombreDepto() {
-        return nombreDepto;
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
 
-    public void setNombreDepto(String nombreDepto) {
-        this.nombreDepto = nombreDepto;
+    public String getRecolector() {
+        return recolector;
     }
 
-    public String getTipodecontrato() {
-        return tipodecontrato;
+    public void setRecolector(String recolector) {
+        this.recolector = recolector;
     }
 
-    public void setTipodecontrato(String tipodecontrato) {
-        this.tipodecontrato = tipodecontrato;
+    public int getId_colmena() {
+        return id_colmena;
     }
 
-    public int getTotal() {
-        return total;
+    public void setId_colmena(int id_colmena) {
+        this.id_colmena = id_colmena;
     }
 
-    public void setTotal(int total) {
-        this.total = total;
+    public int getKilosdeiel() {
+        return kilosdeiel;
     }
+
+    public void setKilosdeiel(int kilosdeiel) {
+        this.kilosdeiel = kilosdeiel;
+    }
+
+    public boolean isAprobacion() {
+        return aprobacion;
+    }
+
+    public void setAprobacion(boolean aprobacion) {
+        this.aprobacion = aprobacion;
+    }
+
+
 
 
     
