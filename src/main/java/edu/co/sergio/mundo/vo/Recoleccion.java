@@ -9,13 +9,13 @@ package edu.co.sergio.mundo.vo;
  *
  * @author Labing
  */
-public class consulta3 {
+public class Recoleccion {
     
     private String nombreDepto;
     private String tipodecontrato;
     private int total;
 
-    public consulta3(String nombreDepto, String tipodecontrato, int total) {
+    public Recoleccion(String nombreDepto, String tipodecontrato, int total) {
         this.nombreDepto = nombreDepto;
         this.tipodecontrato = tipodecontrato;
         this.total = total;
