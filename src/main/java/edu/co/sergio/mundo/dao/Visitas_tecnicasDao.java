@@ -49,7 +49,7 @@ public class Visitas_tecnicasDao  {
     
 	public List<Visitas_Tecnicas> findAll() {
 		List<Visitas_Tecnicas> Visitas= null;
-	    String query = "SELECT * FROM recoleccion";
+	    String query = "SELECT * FROM visitas_tecnicas";
 	    Connection connection = null;
             try {
                 connection = Conexion.getConnection();
@@ -108,7 +108,7 @@ public class Visitas_tecnicasDao  {
 	    st.close();
 	    
 	    } catch (SQLException e) {
-			System.out.println("Problemas al obtener la lista de Departamentos");
+			System.out.println("Problemas al obtener la lista de Visitas tecnicas");
 			e.printStackTrace();
 		}
 	    
