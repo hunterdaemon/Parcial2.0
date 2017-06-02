@@ -1,91 +1,34 @@
 package edu.co.sergio.mundo.vo;
 
 public class Visitas_Tecnicas {
-int id_visita;
-String	fecha;    
-String tecnico; 
-boolean presenciademiel ;
-boolean precenciadereina  ;
-int panalesconaimento ;
- int panalesconcria ;
-int panalesconceravacios ;
-int id_colmena ;
-boolean aprobacion ;
-
     
+private int idVisita_Tecnica;
+private String	Nombre;    
+private String Fecha;
+private boolean aprobacion ;
 
-
-
-    public int getId_visita() {
-        return id_visita;
+    public int getIdVisita_Tecnica() {
+        return idVisita_Tecnica;
     }
 
-    public void setId_visita(int id_visita) {
-        this.id_visita = id_visita;
+    public void setIdVisita_Tecnica(int idVisita_Tecnica) {
+        this.idVisita_Tecnica = idVisita_Tecnica;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
     }
 
     public String getFecha() {
-        return fecha;
+        return Fecha;
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
-
-    public String getTecnico() {
-        return tecnico;
-    }
-
-    public void setTecnico(String tecnico) {
-        this.tecnico = tecnico;
-    }
-
-    public boolean isPresenciademiel() {
-        return presenciademiel;
-    }
-
-    public void setPresenciademiel(boolean presenciademiel) {
-        this.presenciademiel = presenciademiel;
-    }
-
-    public boolean isPrecenciadereina() {
-        return precenciadereina;
-    }
-
-    public void setPrecenciadereina(boolean precenciadereina) {
-        this.precenciadereina = precenciadereina;
-    }
-
-    public int getPanalesconaimento() {
-        return panalesconaimento;
-    }
-
-    public void setPanalesconaimento(int panalesconaimento) {
-        this.panalesconaimento = panalesconaimento;
-    }
-
-    public int getPanalesconcria() {
-        return panalesconcria;
-    }
-
-    public void setPanalesconcria(int panalesconcria) {
-        this.panalesconcria = panalesconcria;
-    }
-
-    public int getPanalesconceravacios() {
-        return panalesconceravacios;
-    }
-
-    public void setPanalesconceravacios(int panalesconceravacios) {
-        this.panalesconceravacios = panalesconceravacios;
-    }
-
-    public int getId_colmena() {
-        return id_colmena;
-    }
-
-    public void setId_colmena(int id_colmena) {
-        this.id_colmena = id_colmena;
+    public void setFecha(String Fecha) {
+        this.Fecha = Fecha;
     }
 
     public boolean isAprobacion() {

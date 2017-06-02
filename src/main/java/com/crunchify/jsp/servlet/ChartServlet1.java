@@ -57,70 +57,6 @@ public class ChartServlet1 extends HttpServlet {
 
 	}
         
-        
-        
-//    public JFreeChart getChart() throws URISyntaxException {
-//
-//        List<Recoleccion> arr = new LinkedList();
-//       Visitas_tecnicasDao vis = new Visitas_tecnicasDao();
-//        arr =   vis.findAll2();
-//        double[][] data = new double[1][arr.size()];
-//        int j=0;
-//        for (int i = 0; i < arr.size(); i++) {
-//            data[0][j] = arr.get(i).getKilosdeiel() ;
-//            j++;
-//        }
-//
-//        CategoryDataset category = DatasetUtilities.createCategoryDataset(
-//                "Series",       
-//                "Colmena",
-//                data
-//        );
-//
-//        JFreeChart chart = ChartFactory.createBarChart(
-//                "Kilos de miel por Colmena", // chart title
-//                "Area", // domain axis label
-//                "Elementos", // range axis label
-//                category, // data
-//                PlotOrientation.VERTICAL, // the plot orientation
-//                false, // include legend
-//                true,
-//                false
-//        );
-//
-//        chart.setBackgroundPaint(Color.lightGray);
-//
-//        // get a reference to the plot for further customisation...
-//        CategoryPlot plot = chart.getCategoryPlot();
-//        plot.setNoDataMessage("NO DATA!");
-//
-//        CategoryItemRenderer renderer = new CustomRenderer(
-//                new Paint[]{Color.red, Color.blue, Color.green,
-//                    Color.yellow, Color.WHITE, Color.cyan,
-//                    Color.magenta, Color.blue}
-//        );
-//
-//        renderer.setItemLabelsVisible(true);
-//        ItemLabelPosition p = new ItemLabelPosition(
-//                ItemLabelAnchor.CENTER, TextAnchor.CENTER, TextAnchor.CENTER, 45.0
-//        );
-//        renderer.setPositiveItemLabelPosition(p);
-//        plot.setRenderer(renderer);
-//
-//        // change the margin at the top of the range axis...
-//       org.jfree.chart.axis.ValueAxis rangAxis = plot.getRangeAxis();
-//        rangAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
-//        rangAxis.setLowerMargin(0.15);
-//        rangAxis.setUpperMargin(0.15);
-//
-//        return chart;
-//
-//    }
-        
-        
-        
-        
-
 	public JFreeChart getChart() {
 		
                 DefaultPieDataset dataset = new DefaultPieDataset();
@@ -132,9 +68,6 @@ public class ChartServlet1 extends HttpServlet {
             
                 dataset.setValue("verga",123);
                 
-//            for (int i = 0; i < c.size(); i++) {
-//                dataset.setValue(c.get(i).getTecnico(),c.get(i).getPanalesconaimento());
-//            }
             
 		boolean legend = true;
 		boolean tooltips = false;
