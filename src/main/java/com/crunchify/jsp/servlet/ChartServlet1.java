@@ -5,7 +5,7 @@
  */
 package com.crunchify.jsp.servlet;
 
-import edu.co.sergio.mundo.dao.Visitas_tecnicasDao;
+import edu.co.sergio.mundo.dao.ColmenaDao;
 import edu.co.sergio.mundo.vo.Visitas_Tecnicas;
 import edu.co.sergio.mundo.vo.Recoleccion;
 import java.awt.BasicStroke;
@@ -62,8 +62,8 @@ public class ChartServlet1 extends HttpServlet {
                 DefaultPieDataset dataset = new DefaultPieDataset();
 	        //Crear la capa de servicios que se enlace con el DAO
                 List <Visitas_Tecnicas>c=new LinkedList<Visitas_Tecnicas>();
-                Visitas_tecnicasDao dep=new Visitas_tecnicasDao();
-                c= dep.findAll();
+                ColmenaDao dep=new ColmenaDao();
+                c= dep.findAll3();
                
             
                 dataset.setValue("verga",123);

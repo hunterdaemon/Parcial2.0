@@ -112,7 +112,7 @@ public class ColmenaDao  {
 	    return Colmenas;
 	}
 
-	public List<Recoleccion> findAll3() {
+	public List<Recoleccion> findAll2() {
 		List<Recoleccion> Recolecciones= null;
 	    String query = "SELECT * FROM Recoleccion";
 	    Connection connection = null;
@@ -138,7 +138,7 @@ public class ColmenaDao  {
 	        Recoleccion registro= new Recoleccion();
                 
                 idRecoleccion=rs.getInt("idRecoleccion");
-                registro.setidRecoleccion(idRecoleccion);
+                registro.setIdRecoleccion(idRecoleccion);
 	        
                 Fecha = rs.getString("Fecha");
 	        registro.setFecha(Fecha);
@@ -158,10 +158,10 @@ public class ColmenaDao  {
 			e.printStackTrace();
 		}
 	    
-	    return Recoleccion;
+	    return Recolecciones;
 	}
 
-        public List<Visitas_Tecnicas> findAll2() {
+        public List<Visitas_Tecnicas> findAll3() {
 		List<Visitas_Tecnicas> Visitas_Tecnica= null;
 	    String query = "SELECT * FROM Visitas_Tecnicas";
 	    Connection connection = null;
@@ -187,7 +187,7 @@ public class ColmenaDao  {
 	        Visitas_Tecnicas registro= new Visitas_Tecnicas();
                 
                 idVisita_Tecnica=rs.getInt("idVisita_Tecnica");
-                registro.setidVisita_Tecnica(idVisita_Tecnica);
+                registro.setIdVisita_Tecnica(idVisita_Tecnica);
 	        
                 Nombre = rs.getString("Nombre");
 	        registro.setNombre(Nombre);
@@ -196,7 +196,7 @@ public class ColmenaDao  {
 	        registro.setFecha(Fecha); 
                 
                 aprobacion=rs.getBoolean("Aprobacion_Recoleccion");
-                registro.setaprobacion(aprobacion);
+                registro.setAprobacion(aprobacion);
                
 	        Visitas_Tecnica.add(registro);
 	    }

@@ -9,6 +9,7 @@ package com.crunchify.jsp.servlet;
 import edu.co.sergio.mundo.dao.ColmenaDao;
 import edu.co.sergio.mundo.vo.Colmena;
 import edu.co.sergio.mundo.vo.Recoleccion;
+import edu.co.sergio.mundo.vo.Visitas_Tecnicas;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Paint;
@@ -71,7 +72,7 @@ public class ChartServlet extends HttpServlet {
 
         List<Recoleccion> arr = new LinkedList();
        ColmenaDao vis = new ColmenaDao();
-        arr =   vis.findAll2();
+        arr =  vis.findAll2();
         double[][] data = new double[1][arr.size()];
         int j=0;
         for (int i = 0; i < arr.size(); i++) {
