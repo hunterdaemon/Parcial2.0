@@ -6,6 +6,7 @@ import java.sql.*;
 public class Conexion {
 	
 	private static Connection CONEXION=null;
+        
     	public static Connection getConnection() throws URISyntaxException{
             URI dbUri = new URI(System.getenv("DATABASE_URL"));
             String username = dbUri.getUserInfo().split(":")[0];
