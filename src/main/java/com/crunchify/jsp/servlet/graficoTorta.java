@@ -72,7 +72,7 @@ public class graficoTorta extends HttpServlet {
                    data.setValue(rs.getInt(10)+": "+rs.getInt(1), rs.getInt(1));
                 }
  
-                    JFreeChart cha = ChartFactory.createPieChart3D("Etapas de la Vida",data, true, true, true);
+                    JFreeChart cha = ChartFactory.createPieChart3D("Panal con Alimentos",data, true, true, true);
                     
                     int ancho = 750;
                     int alto = 600;
