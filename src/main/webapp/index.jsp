@@ -18,8 +18,7 @@ body {
 </head>
 <body>
     <div align="center" style="margin-top: 50px;">
-     
-    <img src="ChartServlet"  align="right"/>
+    
     <img src="ChartServlet1"  align="left"/>
     <left>
         <br/>
