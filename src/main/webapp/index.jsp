@@ -19,12 +19,8 @@ body {
 <body>
     <div align="center" style="margin-top: 50px;">
     
-    <img src="ChartServlet1"  align="left"/>
-    <left>
-        <br/>
-        <form action="graficoTorta">
-            <input type="submit" value="VER GRAFICO PRO"/>
-        <br/>
-    </left>
+    <img src="ChartServlet"  align="left"/>
+    <img src="ChartServlet"  align="right"/>
+   
 </body>
 </html>
