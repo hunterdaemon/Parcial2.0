@@ -65,9 +65,17 @@ public class ChartServlet1 extends HttpServlet {
                 List <Colmena>c=new LinkedList<Colmena>();
                 ColmenaDao dep=new ColmenaDao();
                 c= dep.findAll();
-               
+               double[][] data = new double[1][c.size()];
+                int j=0;
+                for (int i = 0; i < c.size(); i++) {
+                 data[0][j] = c.get(i).getPanal_Alimento() ;
+                    j++;
+                }
             
-                dataset.setValue("Panal con alimento",c.get(1).getPanal_Alimento());
+                for (int i = 0; i < data.length; i++) {
+                dataset.setValue("Panal con alimento",data[i][i]);
+            }
+                
                 
             
 		boolean legend = true;
