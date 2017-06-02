@@ -64,9 +64,9 @@ public class ChartServlet1 extends HttpServlet {
         
         DefaultPieDataset dataset = new DefaultPieDataset();
         
-        for (int i = 0; i < arr.size(); i++) {
-          dataset.setValue("test"+i,arr.get(i).getPanal_Alimento());  
-        }
+        
+        dataset.setValue("test",arr.get(1).getPanal_Alimento());  
+        
         
         
         JFreeChart chart = ChartFactory.createPieChart(
