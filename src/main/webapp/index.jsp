@@ -21,5 +21,11 @@ body {
      
     <img src="ChartServlet"  align="right"/>
     <img src="ChartServlet1"  align="left"/>
+    <left>
+        <br/>
+        <form action="graficoTorta">
+            <input type="submit" value="VER GRAFICO PRO"/>
+        <br/>
+    </left>
 </body>
 </html>
