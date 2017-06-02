@@ -71,7 +71,9 @@ public class ChartServlet1 extends HttpServlet {
         DefaultPieDataset dataset = new DefaultPieDataset();
         
         
-        dataset.setValue("test",data[0][1]);  
+        dataset.setValue("test",data[0][0]);  
+        dataset.setValue("test",data[0][1]);
+        dataset.setValue("test",data[0][2]);
         
         
         
