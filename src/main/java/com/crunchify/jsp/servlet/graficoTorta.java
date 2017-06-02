@@ -69,7 +69,7 @@ public class graficoTorta extends HttpServlet {
                 
                 DefaultPieDataset data = new DefaultPieDataset();
                 while(rs.next()){
-                   data.setValue(rs.getInt(10)+": "+rs.getInt(1), rs.getInt(1));
+                   data.setValue(" "+rs.getInt(1), rs.getInt(1));
                 }
  
                     JFreeChart cha = ChartFactory.createPieChart3D("Panal con Alimentos",data, true, true, true);
