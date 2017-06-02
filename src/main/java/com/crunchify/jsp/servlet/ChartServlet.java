@@ -5,6 +5,7 @@
  */
 package com.crunchify.jsp.servlet;
 
+
 import edu.co.sergio.mundo.dao.ColmenaDao;
 import edu.co.sergio.mundo.vo.Colmena;
 import edu.co.sergio.mundo.vo.Recoleccion;
@@ -62,6 +63,7 @@ public class ChartServlet extends HttpServlet {
 		
 
 	}
+        
         
         
         
