@@ -33,6 +33,7 @@ import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.labels.ItemLabelAnchor;
 import org.jfree.chart.labels.ItemLabelPosition;
 import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PiePlot;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.renderer.category.CategoryItemRenderer;
 import org.jfree.data.category.CategoryDataset;
@@ -41,9 +42,48 @@ import org.jfree.data.general.DefaultPieDataset;
 import org.jfree.ui.TextAnchor;
 
 public class ChartServlet1 extends HttpServlet {
+    
+     private static final long serialVersionUID = 1L;
 
-	private static final long serialVersionUID = 1L;
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+//        String idColmena = request.getParameter("idPanel");
+        response.setContentType("image/png");
+        OutputStream outputStream = response.getOutputStream();
+        JFreeChart chart = createChart();
+        int width = 500;
+        int height = 350;
+        ChartUtilities.writeChartAsPNG(outputStream, chart, width, height);
 
+    }
+  
+    private JFreeChart createChart() {
+        
+        List<Colmena> arr = new LinkedList();
+       ColmenaDao vis = new ColmenaDao();
+        arr =  vis.findAll();
+        
+        DefaultPieDataset dataset = new DefaultPieDataset();
+        
+        for (int i = 0; i < arr.size(); i++) {
+          dataset.setValue("test"+i,arr.get(i).getPanal_Alimento());  
+        }
+        
+        
+        JFreeChart chart = ChartFactory.createPieChart(
+            "Porcentaje de paneles con Alimentos",  // chart title
+            dataset,             // dataset
+            true,                // include legend
+            true,
+            false
+        );
+        PiePlot plot = (PiePlot) chart.getPlot();
+        plot.setNoDataMessage("No data available");
+        plot.setExplodePercent(1, 0.30);
+       
+        return chart;
+    }
+    
+/*
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
             response.setContentType("image/png");
@@ -90,5 +130,5 @@ public class ChartServlet1 extends HttpServlet {
 
 		return chart;
 	}
-
+*/
 }
